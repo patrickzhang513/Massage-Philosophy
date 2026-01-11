@@ -55,12 +55,18 @@
         40%, 60% { transform: translate3d(4px, 0, 0); }
       }
 
-      /* Hide default select arrow in some browsers for custom look */
+      /* Hide default select arrow */
       select {
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
         background-repeat: no-repeat;
         background-position: right 1rem center;
         background-size: 1.5em;
+      }
+
+      @media print {
+        .no-print {
+          display: none !important;
+        }
       }
     </style>
   <script type="importmap">
@@ -69,7 +75,9 @@
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
@@ -77,6 +85,6 @@
 </head>
   <body>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
